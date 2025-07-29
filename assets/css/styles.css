@@ -42,8 +42,9 @@ nav a:visited {
     position:fixed;
     top: 0;
     z-index: 1000;
-    width: 100%;
     box-sizing: border-box;
+    margin-left: 0.3rem;
+    width: 97vw;
 }
 
 .topitems{
@@ -60,8 +61,8 @@ nav a:visited {
 
 .info {
     text-align: left;
-    margin-left: 5rem;
-    margin-top: 3.5rem;
+    margin-left: 3.5rem;
+    margin-top: 3rem;
     padding: 0.5rem;
     width: calc(100% - 20% - 2rem);
     border: 2px solid rgb(110, 110, 110);
@@ -70,6 +71,10 @@ nav a:visited {
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
     max-width: 700px;
+}
+
+.info h2 {
+    color: rgb(255, 75, 85);
 }
 
 .location {
@@ -124,6 +129,7 @@ nav a:visited {
 .socials a img:hover{
     box-shadow: 0 0 25px rgb(255, 75, 85);
     border: 2px solid rgb(255, 75, 85);
+    background-color: rgb(255, 75, 85);
 }
 
 /* Timeline */
@@ -203,5 +209,49 @@ nav a:visited {
     border-radius: 50%;
     left: -44px;
     top: 60px;
+}
+
+/* Rotating Banner */
+.banner {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner .slider {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 10%;
+    left: calc(50% - 100px);
+    transform-style: preserve-3d;
+    transform: perspective(780px);
+    animation: autoRun 20s linear infinite;
+}
+
+@keyframes autoRun{
+    from{
+        transform: perspective(780px) rotateX(-15deg) rotateY(0deg);
+    }
+    to{
+        transform: perspective(780px) rotateX(-15deg) rotateY(360deg);
+    }
+}
+
+.banner .slider .item {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: 
+        rotateY(calc( (var(--position) - 1) * (360 / var(--quantity)) * 1deg))
+        translateZ(min(25vw, 200px));
+}
+
+.banner .slider .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
 }
 
