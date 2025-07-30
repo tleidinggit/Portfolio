@@ -117,7 +117,7 @@ nav a:visited {
 
 .socials {
     position: fixed;
-    top: 20%;
+    top: 45%;
     right: 2px;
     display: flex;
     flex-direction: column;
@@ -237,15 +237,15 @@ nav a:visited {
     left: calc(50% - 100px);
     transform-style: preserve-3d;
     transform: perspective(780px);
-    animation: autoRun 20s linear infinite;
+    animation: autoRun 25s linear infinite;
 }
 
 @keyframes autoRun{
     from{
-        transform: perspective(780px) rotateX(-15deg) rotateY(0deg);
+        transform: perspective(780px) rotateX(-15deg) rotateY(360deg);
     }
     to{
-        transform: perspective(780px) rotateX(-15deg) rotateY(360deg);
+        transform: perspective(780px) rotateX(-15deg) rotateY(0deg);
     }
 }
 
