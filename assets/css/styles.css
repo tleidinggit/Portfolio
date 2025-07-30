@@ -44,10 +44,11 @@ nav a:visited {
     flex-wrap: nowrap;
     position:fixed;
     top: 0;
+    left: 0.1rem;
+    right: 0.1rem;
     z-index: 1000;
     box-sizing: border-box;
     margin-left: 0.3rem;
-    width: 97vw;
 }
 
 .topitems{
